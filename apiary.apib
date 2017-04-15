@@ -12,10 +12,20 @@ https://datahelpdesk.worldbank.org/knowledgebase/articles/898596-api-income-leve
 - pinjaman: 
 https://datahelpdesk.worldbank.org/knowledgebase/articles/898608-api-lending-type-queries
 
-## Level Pendapatan [/incomelevel]
+Pencarian negara untuk setiap API, mengacu berdasarkan:
+- 3 letter ISO 3166-1 alpha-3 code: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+- 2 letter ISO 3166-1 alpha-2 code: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+
+## Level Pendapatan [/incomelevels]
+List pengelompokan level pendapatan
 
 ### List Semua Level Pendapatan [GET]
 
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
 + Response 200 (application/json)
 
         [
@@ -53,6 +63,1037 @@ https://datahelpdesk.worldbank.org/knowledgebase/articles/898608-api-lending-typ
                 {
                   "id": "UMC",
                   "value": "Upper middle income"
+                }
+            ]
+        ]
+        
+## List negara dg Level High Income [/income-hic/countries{?page}]
+Berikut merupakan kumpulan list negara dengan level pendapatan tertentu
+
+### List Negara Level High Income [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+                {
+                  "id": "ABW",
+                  "iso2Code": "AW",
+                  "name": "Aruba",
+                  "region": {
+                    "id": "LCN",
+                    "value": "Latin America & Caribbean "
+                  },
+                  "adminregion": {
+                    "id": "",
+                    "value": ""
+                  },
+                  "incomeLevel": {
+                    "id": "HIC",
+                    "value": "High income"
+                  },
+                  "lendingType": {
+                    "id": "LNX",
+                    "value": "Not classified"
+                  },
+                  "capitalCity": "Oranjestad",
+                  "longitude": "-70.0167",
+                  "latitude": "12.5167"
+                },
+                {
+                  "id": "AND",
+                  "iso2Code": "AD",
+                  "name": "Andorra",
+                  "region": {
+                    "id": "ECS",
+                    "value": "Europe & Central Asia"
+                  },
+                  "adminregion": {
+                    "id": "",
+                    "value": ""
+                  },
+                  "incomeLevel": {
+                    "id": "HIC",
+                    "value": "High income"
+                  },
+                  "lendingType": {
+                    "id": "LNX",
+                    "value": "Not classified"
+                  },
+                  "capitalCity": "Andorra la Vella",
+                  "longitude": "1.5218",
+                  "latitude": "42.5075"
+                }
+            ]
+        ]
+
+## Pencarian Negara dg Level High Income [/income-hic/countries/{country}]
+
+### Negara Level High Income [GET]
+
++ Parameters
+    + country:ABW  (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "ABW",
+                  "iso2Code": "AW",
+                  "name": "Aruba",
+                  "region": {
+                    "id": "LCN",
+                    "value": "Latin America & Caribbean "
+                  },
+                  "adminregion": {
+                    "id": "",
+                    "value": ""
+                  },
+                  "incomeLevel": {
+                    "id": "HIC",
+                    "value": "High income"
+                  },
+                  "lendingType": {
+                    "id": "LNX",
+                    "value": "Not classified"
+                  },
+                  "capitalCity": "Oranjestad",
+                  "longitude": "-70.0167",
+                  "latitude": "12.5167"
+                }
+            ]
+        ]
+        
+## List negara dg Level Middle Income [/income-mic/countries{?page}]
+Berikut merupakan kumpulan list negara dengan level pendapatan tertentu
+    
+### List Negara Level Middle Income [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+                {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                },
+                {
+                  "id": "ALB",
+                  "iso2Code": "AL",
+                  "name": "Albania",
+                  "region": {
+                    "id": "ECS",
+                    "value": "Europe & Central Asia"
+                  },
+                  "adminregion": {
+                    "id": "ECA",
+                    "value": "Europe & Central Asia (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Tirane",
+                  "longitude": "19.8172",
+                  "latitude": "41.3317"
+                }
+            ]
+        ]
+
+## Pencarian Negara dg Level Middle Income [/income-mic/countries/{country}]
+
+### Negara Level Middle Income [GET]
+
++ Parameters
+    + country:AGO  (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                }
+            ]
+        ]
+        
+## List negara dg Level Low income [/income-lic/countries{?page}]
+Berikut merupakan kumpulan list negara dengan level pendapatan terendah
+
+### List Negara Level Low income [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+        
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+                {
+                  "id": "AFG",
+                  "iso2Code": "AF",
+                  "name": "Afghanistan",
+                  "region": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "adminregion": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Kabul",
+                  "longitude": "69.1761",
+                  "latitude": "34.5228"
+                },
+                {
+                  "id": "BDI",
+                  "iso2Code": "BI",
+                  "name": "Burundi",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Bujumbura",
+                  "longitude": "29.3639",
+                  "latitude": "-3.3784"
+                }
+            ]
+        ]
+
+
+## Pencarian Negara dg Level Low Income [/income-lic/countries/{country}]
+
+### Negara Level Low Income [GET]
+
++ Parameters
+    + country:AFG  (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "AFG",
+                  "iso2Code": "AF",
+                  "name": "Afghanistan",
+                  "region": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "adminregion": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Kabul",
+                  "longitude": "69.1761",
+                  "latitude": "34.5228"
+                }
+            ]
+        ]
+        
+
+## List Tipe Pinjaman [/lendingtypes]
+List tipe-tipe pengelompokan pinjaman
+
+### List Tipe Pinjaman [GET]
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "IBD",
+                  "value": "IBRD"
+                },
+                {
+                  "id": "IDB",
+                  "value": "Blend"
+                },
+                {
+                  "id": "IDX",
+                  "value": "IDA"
+                },
+                {
+                  "id": "LNX",
+                  "value": "Not classified"
+                }
+            ]
+        ]
+        
+## List Negara dg Pinjaman IBRD [/lending-ibd/countries{?page}]
+List negara dg tipe pinjaman IBRD (International Bank for Reconstruction and Development)
+
+### List Negara dg Tipe Pinjaman IBRD [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+                {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                },
+                {
+                  "id": "ALB",
+                  "iso2Code": "AL",
+                  "name": "Albania",
+                  "region": {
+                    "id": "ECS",
+                    "value": "Europe & Central Asia"
+                  },
+                  "adminregion": {
+                    "id": "ECA",
+                    "value": "Europe & Central Asia (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Tirane",
+                  "longitude": "19.8172",
+                  "latitude": "41.3317"
+                }
+            ]
+        ]
+        
+## Pencarian Negara dg Pinjaman IBRD [/lending-ibd/countries/{country}]
+Pencarian negara dg tipe pinjaman IBRD (International Bank for Reconstruction and Development)
+
+### Pencarian Negara dg Tipe Pinjaman IBRD [GET]
+
++ Parameters
+    + country:AGO (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                }
+            ]
+        ]
+        
+## List Negara dg Pinjaman IDB [/lending-idb/countries{?page}]
+List negara dg tipe pinjaman IDB (Inter-American Development Bank)
+
+### List Negara dg Tipe Pinjaman IDB [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+               {
+                  "id": "BOL",
+                  "iso2Code": "BO",
+                  "name": "Bolivia",
+                  "region": {
+                    "id": "LCN",
+                    "value": "Latin America & Caribbean "
+                  },
+                  "adminregion": {
+                    "id": "LAC",
+                    "value": "Latin America & Caribbean (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "LMC",
+                    "value": "Lower middle income"
+                  },
+                  "lendingType": {
+                    "id": "IDB",
+                    "value": "Blend"
+                  },
+                  "capitalCity": "La Paz",
+                  "longitude": "-66.1936",
+                  "latitude": "-13.9908"
+                },
+                {
+                  "id": "CMR",
+                  "iso2Code": "CM",
+                  "name": "Cameroon",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "LMC",
+                    "value": "Lower middle income"
+                  },
+                  "lendingType": {
+                    "id": "IDB",
+                    "value": "Blend"
+                  },
+                  "capitalCity": "Yaounde",
+                  "longitude": "11.5174",
+                  "latitude": "3.8721"
+                }
+            ]
+        ]
+        
+## Pencarian Negara dg Pinjaman IDB [/lending-idb/countries/{country}]
+Pencarian negara dg tipe pinjaman IDB (Inter-American Development Bank)
+
+### Pencarian Negara dg Tipe Pinjaman IDB [GET]
+
++ Parameters
+    + country:BOL (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+                {
+                  "id": "BOL",
+                  "iso2Code": "BO",
+                  "name": "Bolivia",
+                  "region": {
+                    "id": "LCN",
+                    "value": "Latin America & Caribbean "
+                  },
+                  "adminregion": {
+                    "id": "LAC",
+                    "value": "Latin America & Caribbean (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "LMC",
+                    "value": "Lower middle income"
+                  },
+                  "lendingType": {
+                    "id": "IDB",
+                    "value": "Blend"
+                  },
+                  "capitalCity": "La Paz",
+                  "longitude": "-66.1936",
+                  "latitude": "-13.9908"
+                }
+            ]
+        ]
+        
+## List Negara dg Pinjaman IDA [/lending-idx/countries{?page}]
+List negara dg tipe pinjaman IDA (International Development Association)
+
+### List Negara dg Tipe Pinjaman IDA [GET]
+
++ Parameters
+    + page (number, optional) - Untuk paging
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+               {
+                  "id": "AFG",
+                  "iso2Code": "AF",
+                  "name": "Afghanistan",
+                  "region": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "adminregion": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Kabul",
+                  "longitude": "69.1761",
+                  "latitude": "34.5228"
+                },
+                {
+                  "id": "BDI",
+                  "iso2Code": "BI",
+                  "name": "Burundi",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Bujumbura",
+                  "longitude": "29.3639",
+                  "latitude": "-3.3784"
+                }
+            ]
+        ]
+        
+## Pencarian Negara dg Pinjaman IDA [/lending-idx/countries/{country}]
+Pencarian negara dg tipe pinjaman IDA (International Development Association)
+
+### Pencarian Negara dg Tipe Pinjaman IDA [GET]
+
++ Parameters
+    + country:AFG (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+               {
+                  "id": "AFG",
+                  "iso2Code": "AF",
+                  "name": "Afghanistan",
+                  "region": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "adminregion": {
+                    "id": "SAS",
+                    "value": "South Asia"
+                  },
+                  "incomeLevel": {
+                    "id": "LIC",
+                    "value": "Low income"
+                  },
+                  "lendingType": {
+                    "id": "IDX",
+                    "value": "IDA"
+                  },
+                  "capitalCity": "Kabul",
+                  "longitude": "69.1761",
+                  "latitude": "34.5228"
+                }
+            ]
+        ]
+        
+
+## List Negara berdasarkan level pendapatan tertentu [/incomelevels/{type}/countries{?page}]
+
+### Get data [GET]
+
++ Parameters
+    + type:MIC (string, required) - Kode Level pendapatan
+    + page (number, optional) - Untuk paging dengan angka
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+               {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                },
+                {
+                  "id": "ALB",
+                  "iso2Code": "AL",
+                  "name": "Albania",
+                  "region": {
+                    "id": "ECS",
+                    "value": "Europe & Central Asia"
+                  },
+                  "adminregion": {
+                    "id": "ECA",
+                    "value": "Europe & Central Asia (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Tirane",
+                  "longitude": "19.8172",
+                  "latitude": "41.3317"
+                }
+            ]
+        ]
+
+## Pencarian Negara berdasarkan level pendapatan tertentu [/incomelevels/{type}/countries/{country}]
+
+### Get data [GET]
+
++ Parameters
+    + type:MIC (string, required) - Kode Level pendapatan
+    + country:AGO (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+               {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                }
+            ]
+        ]
+
+## List Negara berdasarkan tipe pinjaman tertentu [/lendingtypes/{type}/countries{?page}]
+
+### Get data [GET]
+
++ Parameters
+    + type:IBD (string, required) - Kode tipe pinjaman
+    + page (number, optional) - Untuk paging dengan angka
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 2
+            },
+            [
+               {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
+                },
+                {
+                  "id": "ALB",
+                  "iso2Code": "AL",
+                  "name": "Albania",
+                  "region": {
+                    "id": "ECS",
+                    "value": "Europe & Central Asia"
+                  },
+                  "adminregion": {
+                    "id": "ECA",
+                    "value": "Europe & Central Asia (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Tirane",
+                  "longitude": "19.8172",
+                  "latitude": "41.3317"
+                }
+            ]
+        ]
+
+## Pencarian Negara berdasarkan tipe pinjaman tertentu [/lendingtypes/{type}/countries/{country}]
+
+### Get data [GET]
+
++ Parameters
+    + type:IBD (string, required) - Kode Level pendapatan
+    + country:AGO (string, required) - Kode negara yang akan dicari
+    
++ Request
+    + Headers
+
+            Authorization: Basic YWRtaW5AbWFpbC5jb206YWRtaW4xMjM=
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "page": 1,
+                "pages": 1,
+                "per_page": "50",
+                "total": 1
+            },
+            [
+               {
+                  "id": "AGO",
+                  "iso2Code": "AO",
+                  "name": "Angola",
+                  "region": {
+                    "id": "SSF",
+                    "value": "Sub-Saharan Africa "
+                  },
+                  "adminregion": {
+                    "id": "SSA",
+                    "value": "Sub-Saharan Africa (excluding high income)"
+                  },
+                  "incomeLevel": {
+                    "id": "UMC",
+                    "value": "Upper middle income"
+                  },
+                  "lendingType": {
+                    "id": "IBD",
+                    "value": "IBRD"
+                  },
+                  "capitalCity": "Luanda",
+                  "longitude": "13.242",
+                  "latitude": "-8.81155"
                 }
             ]
         ]
