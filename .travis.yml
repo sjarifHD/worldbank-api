@@ -4,16 +4,16 @@ php:
   - '7.0'
   - '7.1'
 
-before_script:
-  - composer self-update
-  - composer install --no-interaction
-
 before_install:
+  - composer self-update
+
+before_script:
   - npm install -g dredd@3.4.1
+  - composer install --no-interaction
   - php artisan serve
 
 after_success:
-    - dredd
+  - dredd
 
 script:
   - vendor/bin/phpunit
