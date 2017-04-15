@@ -1,0 +1,36 @@
+reporter: apiary
+custom:
+  apiaryApiKey: c477b98721d8652034c3801ad72eb7bd
+  apiaryApiName: worldbank1
+dry-run: null
+hookfiles: null
+language: php
+sandbox: false
+server: php artisan serve
+server-wait: 3
+init: false
+names: false
+only: []
+output: []
+header: []
+sorted: false
+user: null
+inline-errors: false
+details: false
+method: []
+color: true
+level: info
+timestamp: false
+silent: false
+path: []
+hooks-worker-timeout: 5000
+hooks-worker-connect-timeout: 1500
+hooks-worker-connect-retry: 500
+hooks-worker-after-connect-wait: 100
+hooks-worker-term-timeout: 5000
+hooks-worker-term-retry: 500
+hooks-worker-handler-host: 127.0.0.1
+hooks-worker-handler-port: 61321
+config: ./dredd.yml
+blueprint: apiary.apib
+endpoint: '127.0.0.1:8000/api/'
