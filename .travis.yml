@@ -6,11 +6,13 @@ php:
 
 before_install:
   - composer self-update
+  - npm cache clean -f
 
 before_script:
+  - npm install -g n
+  - n stable
   - npm install -g dredd@3.4.1
   - composer install --no-interaction
-  - php artisan serve
 
 after_success:
   - dredd
