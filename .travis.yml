@@ -9,10 +9,11 @@ before_install:
   - npm cache clean -f
 
 before_script:
-  - npm install -g n
-  - n stable
+  - nvm install 6
+  - npm install -g npm@latest
   - npm install -g dredd@3.4.1
   - composer install --no-interaction
+  - composer require ddelnano/dredd-hooks-php:~1.0.0
 
 after_success:
   - dredd
