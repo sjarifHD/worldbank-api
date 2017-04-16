@@ -1,5 +1,5 @@
 # WorldBank-API
-Wolrbank REST API use Laravel Framework for getting data from worldbank about lending types and income levels in every country in world.
+Wolrbank REST API use Laravel Framework for getting data from worldbank about lending types and income levels in every country in world. Currentyl for this example authentication access is saved in sqlite database.
 
 ## Requirements
 - PHP >= 5.6
@@ -11,6 +11,11 @@ Wolrbank REST API use Laravel Framework for getting data from worldbank about le
 2. Install depedencies with composer Install
 3. Run web server: ```php artisan serve```
 4. Access the web in address: ```127.0.0.1:8000```
+
+# Authentication
+For authentication when accessing API Endpoint in this example, you can use:
+- username: ```admin@mail.com```
+- password: ```admin123``` 
 
 ## How to run PHPUnit Test
 1. Install PHPUnit using phar or composer. Refer to [this](https://phpunit.de/manual/current/en/installation.html) for installation details.
